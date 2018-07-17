@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.YuyueActivity">
+
+    <RelativeLayout
+        android:id="@+id/wode_biaoti"
+        android:layout_width="match_parent"
+        android:layout_height="150pt"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@mipmap/jianbian">
+
+        <ImageView
+            android:id="@+id/dingwei"
+            android:layout_width="20pt"
+            android:layout_height="20pt"
+            android:layout_marginLeft="22.5pt"
+            android:layout_marginTop="65pt"
+            android:src="@mipmap/dingwei" />
+
+        <TextView
+            android:id="@+id/weizhi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/dingwei"
+            android:layout_toRightOf="@+id/dingwei"
+            android:layout_marginLeft="9pt"
+            android:text="null"
+            android:textColor="#fff"
+            android:textSize="18pt" />
+
+        <ImageView
+            android:id="@+id/xiala"
+            android:layout_width="25pt"
+            android:layout_height="25pt"
+            android:layout_alignBottom="@+id/weizhi"
+            android:layout_toRightOf="@+id/weizhi"
+            android:layout_marginLeft="9pt"
+            android:src="@mipmap/xialasanjiao" />
+        <EditText
+            android:layout_width="330pt"
+            android:layout_height="45pt"
+            android:background="#fff"
+            android:layout_below="@+id/dingwei"
+            />
+
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40pt"
+        android:layout_alignParentBottom="true"
+        android:background="#fff"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="38pt"
+            android:src="@mipmap/yuyue2"/>
+        <TextView
+            android:layout_width="1pt"
+            android:layout_height="23.5pt"
+            android:background="#c8c8c8"
+            android:layout_gravity="center_vertical"
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="38pt"
+            android:src="@mipmap/wode"/>
+    </LinearLayout>
+
+</RelativeLayout>

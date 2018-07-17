@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    tools:context=".view.DianCanActivity">
+<ImageView
+    android:id="@+id/bott"
+    android:layout_width="152pt"
+    android:layout_height="152pt"
+    android:layout_marginTop="150pt"
+    android:layout_marginLeft="104pt"
+    android:src="@mipmap/bott"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40pt"
+        android:layout_gravity="bottom"
+        android:clipChildren="false"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/yuyue"
+            android:layout_width="25pt"
+            android:layout_marginLeft="60pt"
+            android:layout_height="38pt"
+            android:src="@mipmap/yuyue"/>
+        <ImageView
+            android:id="@+id/bott2"
+            android:layout_width="64pt"
+            android:layout_marginLeft="65pt"
+            android:layout_height="64pt"
+            android:layout_gravity="bottom"
+            android:src="@mipmap/bott"/>
+        <ImageView
+            android:id="@+id/wode"
+            android:layout_width="25pt"
+            android:layout_marginLeft="65pt"
+            android:layout_height="38pt"
+            android:src="@mipmap/wode"/>
+
+    </LinearLayout>
+
+
+</FrameLayout>

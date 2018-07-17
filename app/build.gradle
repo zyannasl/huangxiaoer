@@ -1,0 +1,79 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.example.lenovo.huangxiaoer"
+        minSdkVersion 22
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //bugly
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    implementation project(':mvp')
+    implementation 'com.hjhrq991.screenadapter:ScreenAdapter:1.0.1'
+    implementation 'com.facebook.fresco:fresco:0.12.0'
+    implementation 'com.facebook.fresco:animated-gif:0.14.1'
+    implementation 'com.hjm:BottomTabBar:1.1.1'
+    //bugly
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+    //百度地图
+    implementation files('libs/BaiduLBS_Android.jar')
+    //调用相册,相机
+    implementation 'com.jph.takephoto:takephoto_library:4.0.3'
+    implementation 'com.yanzhenjie:permission:1.0.5'
+    //recyclerview
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    //eventBus
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    //让retrofit支持Rxjava2
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    //okhttp日志
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+    implementation files('libs/MobCommons-2018.0523.1925.jar')
+    implementation files('libs/MobTools-2018.0523.1923.jar')
+    implementation files('libs/SDKWrapper-2018.0201.1609.jar')
+    implementation files('libs/SMSSDK-3.2.1.jar')
+    //easypermissions
+    implementation 'pub.devrel:easypermissions:0.4.2'
+}
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '27.1.1'
+            }
+        }
+    }
+}
